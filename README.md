@@ -1,5 +1,21 @@
 **Mission 3 version b** 
 
+
+Source
+
+Maquette :
+https://docs.google.com/presentation/d/11WdeWvk6xjYu6Yn6V2gOTDmTaSBZFEIFfqUYomYd_I8/edit#slide=id.p
+
+
+
+Description situation professionel
+https://docs.google.com/presentation/d/1r8LO-7K4ifhftwQ9o3_UepqqaX5pKZaQHRbSkT6G7lE/edit?usp=sharing
+
+
+Trello :
+https://trello.com/b/Ukil0Tca/mission3bgsb
+
+
 ![](Aspose.Words.8cea9e00-aa2d-4a63-bb6d-c5ce8c29405a.001.png)
 
 **PROJET APPLI-CR Activités du portefeuille de compétences** 
