@@ -32,7 +32,14 @@ namespace Mission3_GSB
             this.components = new System.ComponentModel.Container();
             this.btnFermer = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bdgSourceOffrir = new System.Windows.Forms.BindingSource(this.components);
+            this.nomCommercialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFamilleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.compositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.effetsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.familleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contreIndicationsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.offrirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdgSourceVMedic = new System.Windows.Forms.BindingSource(this.components);
             this.cmBxFam = new System.Windows.Forms.ComboBox();
             this.bdgSourceFamille = new System.Windows.Forms.BindingSource(this.components);
@@ -42,22 +49,24 @@ namespace Mission3_GSB
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnModif = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.idMedicamentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idRapportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicamentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rapportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grBFiltre = new System.Windows.Forms.GroupBox();
+            this.lblError = new System.Windows.Forms.Label();
+            this.txtFiltre = new System.Windows.Forms.TextBox();
+            this.lblRecherche = new System.Windows.Forms.Label();
+            this.bdgSourceOffrir = new System.Windows.Forms.BindingSource(this.components);
+            this.lblCountResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdgSourceOffrir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgSourceVMedic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgSourceFamille)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.grBFiltre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgSourceOffrir)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFermer
             // 
             this.btnFermer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFermer.Location = new System.Drawing.Point(550, 471);
+            this.btnFermer.Location = new System.Drawing.Point(550, 689);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(2);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(95, 44);
@@ -72,20 +81,73 @@ namespace Mission3_GSB
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idMedicamentDataGridViewTextBoxColumn,
-            this.quantiteDataGridViewTextBoxColumn,
-            this.idRapportDataGridViewTextBoxColumn,
-            this.medicamentDataGridViewTextBoxColumn,
-            this.rapportDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bdgSourceOffrir;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 111);
+            this.nomCommercialDataGridViewTextBoxColumn,
+            this.idFamilleDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn,
+            this.compositionDataGridViewTextBoxColumn,
+            this.effetsDataGridViewTextBoxColumn,
+            this.familleDataGridViewTextBoxColumn,
+            this.contreIndicationsDataGridViewTextBoxColumn,
+            this.offrirDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bdgSourceVMedic;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 329);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(645, 357);
             this.dataGridView1.TabIndex = 2;
             // 
-            // bdgSourceOffrir
+            // nomCommercialDataGridViewTextBoxColumn
             // 
-            this.bdgSourceOffrir.DataSource = typeof(Mission3_GSB.offrir);
+            this.nomCommercialDataGridViewTextBoxColumn.DataPropertyName = "nomCommercial";
+            this.nomCommercialDataGridViewTextBoxColumn.HeaderText = "nomCommercial";
+            this.nomCommercialDataGridViewTextBoxColumn.Name = "nomCommercialDataGridViewTextBoxColumn";
+            // 
+            // idFamilleDataGridViewTextBoxColumn
+            // 
+            this.idFamilleDataGridViewTextBoxColumn.DataPropertyName = "idFamille";
+            this.idFamilleDataGridViewTextBoxColumn.HeaderText = "idFamille";
+            this.idFamilleDataGridViewTextBoxColumn.Name = "idFamilleDataGridViewTextBoxColumn";
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // compositionDataGridViewTextBoxColumn
+            // 
+            this.compositionDataGridViewTextBoxColumn.DataPropertyName = "composition";
+            this.compositionDataGridViewTextBoxColumn.HeaderText = "composition";
+            this.compositionDataGridViewTextBoxColumn.Name = "compositionDataGridViewTextBoxColumn";
+            this.compositionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // effetsDataGridViewTextBoxColumn
+            // 
+            this.effetsDataGridViewTextBoxColumn.DataPropertyName = "effets";
+            this.effetsDataGridViewTextBoxColumn.HeaderText = "effets";
+            this.effetsDataGridViewTextBoxColumn.Name = "effetsDataGridViewTextBoxColumn";
+            this.effetsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // familleDataGridViewTextBoxColumn
+            // 
+            this.familleDataGridViewTextBoxColumn.DataPropertyName = "famille";
+            this.familleDataGridViewTextBoxColumn.HeaderText = "famille";
+            this.familleDataGridViewTextBoxColumn.Name = "familleDataGridViewTextBoxColumn";
+            this.familleDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // contreIndicationsDataGridViewTextBoxColumn
+            // 
+            this.contreIndicationsDataGridViewTextBoxColumn.DataPropertyName = "contreIndications";
+            this.contreIndicationsDataGridViewTextBoxColumn.HeaderText = "contreIndications";
+            this.contreIndicationsDataGridViewTextBoxColumn.Name = "contreIndicationsDataGridViewTextBoxColumn";
+            this.contreIndicationsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // offrirDataGridViewTextBoxColumn
+            // 
+            this.offrirDataGridViewTextBoxColumn.DataPropertyName = "offrir";
+            this.offrirDataGridViewTextBoxColumn.HeaderText = "offrir";
+            this.offrirDataGridViewTextBoxColumn.Name = "offrirDataGridViewTextBoxColumn";
+            this.offrirDataGridViewTextBoxColumn.Visible = false;
             // 
             // bdgSourceVMedic
             // 
@@ -138,7 +200,7 @@ namespace Mission3_GSB
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(0, 474);
+            this.btnAdd.Location = new System.Drawing.Point(5, 689);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(85, 43);
             this.btnAdd.TabIndex = 8;
@@ -148,7 +210,7 @@ namespace Mission3_GSB
             // 
             // btnModif
             // 
-            this.btnModif.Location = new System.Drawing.Point(91, 474);
+            this.btnModif.Location = new System.Drawing.Point(96, 689);
             this.btnModif.Name = "btnModif";
             this.btnModif.Size = new System.Drawing.Size(85, 43);
             this.btnModif.TabIndex = 9;
@@ -158,7 +220,7 @@ namespace Mission3_GSB
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(182, 474);
+            this.btnDelete.Location = new System.Drawing.Point(187, 689);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(85, 43);
             this.btnDelete.TabIndex = 10;
@@ -166,44 +228,63 @@ namespace Mission3_GSB
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // idMedicamentDataGridViewTextBoxColumn
+            // grBFiltre
             // 
-            this.idMedicamentDataGridViewTextBoxColumn.DataPropertyName = "idMedicament";
-            this.idMedicamentDataGridViewTextBoxColumn.HeaderText = "idMedicament";
-            this.idMedicamentDataGridViewTextBoxColumn.Name = "idMedicamentDataGridViewTextBoxColumn";
+            this.grBFiltre.Controls.Add(this.lblError);
+            this.grBFiltre.Controls.Add(this.txtFiltre);
+            this.grBFiltre.Controls.Add(this.lblRecherche);
+            this.grBFiltre.Location = new System.Drawing.Point(5, 111);
+            this.grBFiltre.Name = "grBFiltre";
+            this.grBFiltre.Size = new System.Drawing.Size(305, 100);
+            this.grBFiltre.TabIndex = 8;
+            this.grBFiltre.TabStop = false;
+            this.grBFiltre.Text = "Filtre";
             // 
-            // quantiteDataGridViewTextBoxColumn
+            // lblError
             // 
-            this.quantiteDataGridViewTextBoxColumn.DataPropertyName = "quantite";
-            this.quantiteDataGridViewTextBoxColumn.HeaderText = "quantite";
-            this.quantiteDataGridViewTextBoxColumn.Name = "quantiteDataGridViewTextBoxColumn";
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(64, 77);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 7;
             // 
-            // idRapportDataGridViewTextBoxColumn
+            // txtFiltre
             // 
-            this.idRapportDataGridViewTextBoxColumn.DataPropertyName = "idRapport";
-            this.idRapportDataGridViewTextBoxColumn.HeaderText = "idRapport";
-            this.idRapportDataGridViewTextBoxColumn.Name = "idRapportDataGridViewTextBoxColumn";
-            this.idRapportDataGridViewTextBoxColumn.Visible = false;
+            this.txtFiltre.Location = new System.Drawing.Point(86, 45);
+            this.txtFiltre.Name = "txtFiltre";
+            this.txtFiltre.Size = new System.Drawing.Size(123, 20);
+            this.txtFiltre.TabIndex = 6;
+            this.txtFiltre.TextChanged += new System.EventHandler(this.txtFiltre_TextChanged);
             // 
-            // medicamentDataGridViewTextBoxColumn
+            // lblRecherche
             // 
-            this.medicamentDataGridViewTextBoxColumn.DataPropertyName = "medicament";
-            this.medicamentDataGridViewTextBoxColumn.HeaderText = "medicament";
-            this.medicamentDataGridViewTextBoxColumn.Name = "medicamentDataGridViewTextBoxColumn";
-            this.medicamentDataGridViewTextBoxColumn.Visible = false;
+            this.lblRecherche.AutoSize = true;
+            this.lblRecherche.Location = new System.Drawing.Point(12, 48);
+            this.lblRecherche.Name = "lblRecherche";
+            this.lblRecherche.Size = new System.Drawing.Size(60, 13);
+            this.lblRecherche.TabIndex = 5;
+            this.lblRecherche.Text = "Recherche";
             // 
-            // rapportDataGridViewTextBoxColumn
+            // bdgSourceOffrir
             // 
-            this.rapportDataGridViewTextBoxColumn.DataPropertyName = "rapport";
-            this.rapportDataGridViewTextBoxColumn.HeaderText = "rapport";
-            this.rapportDataGridViewTextBoxColumn.Name = "rapportDataGridViewTextBoxColumn";
-            this.rapportDataGridViewTextBoxColumn.Visible = false;
+            this.bdgSourceOffrir.DataSource = typeof(Mission3_GSB.offrir);
+            // 
+            // lblCountResult
+            // 
+            this.lblCountResult.AutoSize = true;
+            this.lblCountResult.Location = new System.Drawing.Point(12, 227);
+            this.lblCountResult.Name = "lblCountResult";
+            this.lblCountResult.Size = new System.Drawing.Size(0, 13);
+            this.lblCountResult.TabIndex = 11;
             // 
             // FrmVoirMedic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 539);
+            this.ClientSize = new System.Drawing.Size(645, 742);
+            this.Controls.Add(this.lblCountResult);
+            this.Controls.Add(this.grBFiltre);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModif);
             this.Controls.Add(this.btnAdd);
@@ -214,12 +295,15 @@ namespace Mission3_GSB
             this.Name = "FrmVoirMedic";
             this.Text = "FrmVoirMedic";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdgSourceOffrir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgSourceVMedic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdgSourceFamille)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.grBFiltre.ResumeLayout(false);
+            this.grBFiltre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdgSourceOffrir)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -236,10 +320,18 @@ namespace Mission3_GSB
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idMedicamentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantiteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRapportDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicamentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rapportDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomCommercialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFamilleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn compositionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn effetsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn familleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contreIndicationsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn offrirDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox grBFiltre;
+        private System.Windows.Forms.TextBox txtFiltre;
+        private System.Windows.Forms.Label lblRecherche;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblCountResult;
     }
 }

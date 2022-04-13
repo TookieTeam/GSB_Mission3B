@@ -59,6 +59,46 @@ namespace Mission3_GSB
             this.cmBxFam.Update();
         }
 
-       
+        private void linqFilter()
+        {
+            var query = from m in mesDonneesEF.medicament
+                        where m.nomCommercial.StartsWith(txtFiltre.Text)
+                        select m;
+            bdgSourceVMedic.DataSource = query.ToList();
+
+        }
+
+        private string countMedic()
+        {
+            var query = (from m in mesDonneesEF.medicament
+                         where m.nomCommercial.StartsWith(txtFiltre.Text)
+                         select m.id).Count();
+            string result = query.ToString();
+            return result;
+        }
+
+        private void txtFiltre_TextChanged(object sender, EventArgs e)
+        {
+            //lblError.Visible = false;
+
+            if (txtFiltre.Text.Length >= 2)
+            {
+             
+                linqFilter();
+                dataGridView1.AutoResizeColumns();
+               // lblError.Visible = false;
+                lblError.Text = " ";
+                lblCountResult.Text = "il y'a "+countMedic()+" trouvée";
+            }
+            else
+            {
+               // lblError.Visible = true;
+                lblError.Text = "il faut mettre au moin les deux première lettre !!";
+                
+            }
+
+          
+
+        }
     }
 }
