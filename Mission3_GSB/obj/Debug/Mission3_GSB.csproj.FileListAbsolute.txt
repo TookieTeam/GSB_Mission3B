@@ -262,4 +262,3 @@ G:\laragon_portable\www\[projetGSB]\Mission3_GSB\Mission3_GSB\obj\Debug\Mission3
 G:\laragon_portable\www\[projetGSB]\Mission3_GSB\Mission3_GSB\obj\Debug\Mission3_GSB.csproj.CopyComplete
 G:\laragon_portable\www\[projetGSB]\Mission3_GSB\Mission3_GSB\obj\Debug\Mission3_GSB.exe
 G:\laragon_portable\www\[projetGSB]\Mission3_GSB\Mission3_GSB\obj\Debug\Mission3_GSB.pdb
-G:\laragon_portable\www\[projetGSB]\Mission3_GSB\Mission3_GSB\obj\Debug\Mission3_GSB.csproj.SuggestedBindingRedirects.cache

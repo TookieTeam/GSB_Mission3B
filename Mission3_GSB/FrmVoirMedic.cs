@@ -68,10 +68,28 @@ namespace Mission3_GSB
 
         }
 
+        private void linqFamille()
+        {
+            var query = from m in mesDonneesEF.medicament
+                        where m.idFamille.StartsWith(cmBxFam.Text)
+                        select m;
+            bdgSourceVMedic.DataSource = query.ToList();
+
+        }
+
         private string countMedic()
         {
             var query = (from m in mesDonneesEF.medicament
                          where m.nomCommercial.StartsWith(txtFiltre.Text)
+                         select m.id).Count();
+            string result = query.ToString();
+            return result;
+        }
+
+        private string countFam()
+        {
+            var query = (from m in mesDonneesEF.medicament
+                         where m.idFamille.StartsWith(cmBxFam.Text)
                          select m.id).Count();
             string result = query.ToString();
             return result;
@@ -99,6 +117,19 @@ namespace Mission3_GSB
 
           
 
+        }
+
+        private void cmBxFam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+
+                linqFamille();
+                dataGridView1.AutoResizeColumns();
+            
+                lblError.Text = " ";
+                lblCountResult.Text = "il y'a " + countFam() + " trouvée";
+            
+          
         }
     }
 }

@@ -162,6 +162,7 @@ namespace Mission3_GSB
             this.cmBxFam.Name = "cmBxFam";
             this.cmBxFam.Size = new System.Drawing.Size(121, 21);
             this.cmBxFam.TabIndex = 4;
+            this.cmBxFam.SelectedIndexChanged += new System.EventHandler(this.cmBxFam_SelectedIndexChanged);
             // 
             // bdgSourceFamille
             // 
